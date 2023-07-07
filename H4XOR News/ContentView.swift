@@ -8,14 +8,19 @@
 import SwiftUI
 
 struct ContentView: View {
+    let posts = [
+        PostData(id: "1", title: "Hello World"),
+        PostData(id: "2", title: "Olá Mundo"),
+        PostData(id: "3", title: "Orlando Gabriel")
+    ]
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        NavigationView {
+            List (posts) { post in
+                Text(post.title)
+            }
+            .navigationBarTitle("H4X0R News")
         }
-        .padding()
     }
 }
 
