@@ -7,7 +7,18 @@
 
 import Foundation
 
-struct PostData: Identifiable {
-    let id: String
+struct PostData: Identifiable, Codable {
+    var id: String {
+        return objectID
+    }
+    let objectID: String
+    let points: Int
     let title: String
+    let url: String
+    
+}
+
+
+struct Results: Codable {
+    let hits: [PostData]
 }
